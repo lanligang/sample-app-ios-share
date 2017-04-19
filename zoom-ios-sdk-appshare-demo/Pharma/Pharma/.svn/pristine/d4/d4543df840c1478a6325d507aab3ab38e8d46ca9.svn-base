@@ -1,0 +1,321 @@
+//
+//  ZBBMIntroViewController.m
+//  ZoomBBM
+//
+//  Created by Robust Hu on 7/7/15.
+//  Copyright (c) 2015 zoom.us. All rights reserved.
+//
+
+#import "IntroViewController.h"
+
+#define kTagTitleLabel      1
+#define kTagImgView         2
+#define kTagDetailLabel     3
+
+#define kTitleFont [UIFont fontWithName:@"HelveticaNeue-Bold" size:20.0]
+#define kTitlePadFont [UIFont fontWithName:@"HelveticaNeue-Bold" size:36.0]
+#define kDetailFont [UIFont fontWithName:@"HelveticaNeue" size:12.0]
+#define kDetailPadFont [UIFont fontWithName:@"HelveticaNeue" size:20.0]
+
+#define kButtonNormalFont [UIFont fontWithName:@"HelveticaNeue" size:20.0]
+#define kButtonBoldFont [UIFont fontWithName:@"HelveticaNeue-Medium" size:20.0]
+
+#define kBGColor [UIColor colorWithRed:26./255. green:163./255. blue:227./255. alpha:1.]
+
+#define is_iPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+@interface IntroViewController ()<UIScrollViewDelegate>
+
+@property (retain, nonatomic)  UIScrollView *scrollView;
+@property (retain, nonatomic)  UIPageControl *pageControl;
+@property (retain, nonatomic)  UIButton     *doneButton;
+
+@property (retain, nonatomic)  UIView *firstView;
+@property (retain, nonatomic)  UIView *secondView;
+@property (retain, nonatomic)  UIView *thirdView;
+
+@end
+
+@implementation IntroViewController
+
+- (void)dealloc
+{
+    self.delegate = nil;
+    
+    self.firstView = nil;
+    self.secondView = nil;
+    self.thirdView = nil;
+    
+    self.scrollView = nil;
+    self.pageControl = nil;
+    self.doneButton = nil;
+    
+//    [super dealloc];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    self.view.backgroundColor = kBGColor;
+    
+    [self.view addSubview:self.scrollView];
+    [self.scrollView addSubview:self.firstView];
+    [self.scrollView addSubview:self.secondView];
+    [self.scrollView addSubview:self.thirdView];
+    
+    [self.view addSubview:self.pageControl];
+    [self.view addSubview:self.doneButton];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidLayoutSubviews
+{
+#define kButtonHeight  80
+#define kPageHeight  20
+#define kTitleHeight 60
+#define kDetailHeight 100
+    CGRect bounds = self.view.bounds;
+    
+    self.doneButton.frame = CGRectMake(0, bounds.size.height-kButtonHeight, bounds.size.width, kButtonHeight);
+    
+    self.pageControl.frame = CGRectMake(0, CGRectGetMinY(self.doneButton.frame)-kPageHeight, bounds.size.width, kPageHeight);
+    
+    self.scrollView.frame = CGRectMake(0, 0, bounds.size.width, bounds.size.height-kButtonHeight);
+    self.scrollView.contentSize = CGSizeMake(bounds.size.width*3, self.scrollView.frame.size.height);
+    
+    [self updateFirstViewFrame];
+    [self updateSecondViewFrame];
+    [self updateThirdViewFrame];
+}
+
+- (void)updateFirstViewFrame
+{
+    CGRect viewFrame = self.view.bounds;
+    self.firstView.frame = viewFrame;
+    
+    UIView *titleLabel = [self.firstView viewWithTag:kTagTitleLabel];
+    titleLabel.frame = CGRectMake(kPageHeight, kTitleHeight/2, viewFrame.size.width-2*kPageHeight, kTitleHeight);
+    
+    UIView *detailLabel = [self.firstView viewWithTag:kTagDetailLabel];
+    CGFloat offsetY = viewFrame.size.height-kButtonHeight-kPageHeight - kDetailHeight;
+    detailLabel.frame = CGRectMake(kDetailHeight/4, offsetY, viewFrame.size.width-kDetailHeight/2, kDetailHeight);
+    
+    UIView *imgView = [self.firstView viewWithTag:kTagImgView];
+    imgView.frame = CGRectMake(0, CGRectGetMaxY(titleLabel.frame), viewFrame.size.width, CGRectGetMinY(detailLabel.frame)-CGRectGetMaxY(titleLabel.frame));
+}
+
+- (void)updateSecondViewFrame
+{
+    CGRect viewFrame = CGRectOffset(self.firstView.frame, self.firstView.frame.size.width, 0);
+    self.secondView.frame = viewFrame;
+    
+    UIView *titleLabel = [self.secondView viewWithTag:kTagTitleLabel];
+    titleLabel.frame = CGRectMake(kPageHeight, kTitleHeight/2, viewFrame.size.width-2*kPageHeight, kTitleHeight);
+    
+    UIView *detailLabel = [self.secondView viewWithTag:kTagDetailLabel];
+    CGFloat offsetY = viewFrame.size.height-kButtonHeight-kPageHeight - kDetailHeight;
+    detailLabel.frame = CGRectMake(kDetailHeight/4, offsetY, viewFrame.size.width-kDetailHeight/2, kDetailHeight);
+    
+    UIView *imgView = [self.secondView viewWithTag:kTagImgView];
+    imgView.frame = CGRectMake(0, CGRectGetMaxY(titleLabel.frame), viewFrame.size.width, CGRectGetMinY(detailLabel.frame)-CGRectGetMaxY(titleLabel.frame));
+}
+
+- (void)updateThirdViewFrame
+{
+    CGRect viewFrame = CGRectOffset(self.secondView.frame, self.secondView.frame.size.width, 0);
+    self.thirdView.frame = viewFrame;
+    
+    UIView *titleLabel = [self.thirdView viewWithTag:kTagTitleLabel];
+    titleLabel.frame = CGRectMake(kPageHeight, kTitleHeight/2, viewFrame.size.width-2*kPageHeight, kTitleHeight);
+    
+    UIView *detailLabel = [self.thirdView viewWithTag:kTagDetailLabel];
+    CGFloat offsetY = viewFrame.size.height-kButtonHeight-kPageHeight - kDetailHeight;
+    detailLabel.frame = CGRectMake(kDetailHeight/4, offsetY, viewFrame.size.width-kDetailHeight/2, kDetailHeight);
+    
+    UIView *imgView = [self.thirdView viewWithTag:kTagImgView];
+    imgView.frame = CGRectMake(0, CGRectGetMaxY(titleLabel.frame), viewFrame.size.width, CGRectGetMinY(detailLabel.frame)-CGRectGetMaxY(titleLabel.frame));
+}
+
+- (UIScrollView*)scrollView
+{
+    if (!_scrollView)
+    {
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
+        _scrollView.delegate = self;
+        _scrollView.pagingEnabled = YES;
+        
+        //This is the starting point of the ScrollView
+        CGPoint scrollPoint = CGPointMake(0, 0);
+        [_scrollView setContentOffset:scrollPoint animated:YES];
+    }
+    
+    return _scrollView;
+}
+
+- (UIPageControl*)pageControl
+{
+    if (!_pageControl)
+    {
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
+        _pageControl.userInteractionEnabled = NO;
+        _pageControl.backgroundColor = [UIColor colorWithRed:0. green:127./255. blue:202./255. alpha:1.];//[UIColor colorWithHex:0x007fca];
+        _pageControl.numberOfPages = 3;
+    }
+    
+    return _pageControl;
+}
+
+- (UIButton*)doneButton
+{
+    if (!_doneButton)
+    {
+        _doneButton = [[UIButton alloc] initWithFrame:CGRectZero];
+        [_doneButton setTitle:NSLocalizedString(@"Test", @"") forState:UIControlStateNormal];
+        [_doneButton.titleLabel setFont:kButtonNormalFont];
+        _doneButton.backgroundColor = [UIColor colorWithRed:14./255. green:97./255. blue:174./255. alpha:1.];//[UIColor colorWithHex:0x0e61ae];
+        [_doneButton addTarget:self action:@selector(onDoneButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _doneButton;
+}
+
+- (UIView*)firstView
+{
+    if (!_firstView)
+    {
+        _firstView = [[UIView alloc] initWithFrame:CGRectZero];
+        _firstView.backgroundColor = kBGColor;
+        
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        titleLabel.tag = kTagTitleLabel;
+        titleLabel.text = NSLocalizedString(@"SHARE SCREEN DEMO", @"");
+        titleLabel.font = is_iPad ? kTitlePadFont : kTitleFont;
+        titleLabel.backgroundColor = [UIColor clearColor];
+        titleLabel.textColor = [UIColor whiteColor];
+        titleLabel.textAlignment =  NSTextAlignmentCenter;
+        titleLabel.numberOfLines = 0;
+        [_firstView addSubview:titleLabel];
+        
+        UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectZero];
+        imageview.tag = kTagImgView;
+        imageview.clipsToBounds = YES;
+        imageview.contentMode = UIViewContentModeCenter;
+        imageview.image = [UIImage imageNamed:@"ic_video_meeting"];
+        [_firstView addSubview:imageview];
+        
+        UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        detailLabel.tag = kTagDetailLabel;
+        detailLabel.text = NSLocalizedString(@"Zoom has made communication much easier, especially when working with our remote offices.", @"");
+        detailLabel.font =  is_iPad ? kDetailPadFont : kDetailFont;
+        detailLabel.backgroundColor = [UIColor clearColor];
+        detailLabel.textColor = [UIColor whiteColor];
+        detailLabel.textAlignment =  NSTextAlignmentCenter;
+        detailLabel.numberOfLines = 0;
+        [_firstView addSubview:detailLabel];
+    }
+    
+    return _firstView;
+}
+
+- (UIView*)secondView
+{
+    if (!_secondView)
+    {
+        _secondView = [[UIView alloc] initWithFrame:CGRectZero];
+        _secondView.backgroundColor = kBGColor;
+        
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        titleLabel.tag = kTagTitleLabel;
+        titleLabel.text = NSLocalizedString(@"SHARE SCREEN DEMO", @"");
+        titleLabel.font = is_iPad ? kTitlePadFont : kTitleFont;
+        titleLabel.backgroundColor = [UIColor clearColor];
+        titleLabel.textColor = [UIColor whiteColor];
+        titleLabel.textAlignment =  NSTextAlignmentCenter;
+        titleLabel.numberOfLines = 0;
+        [_secondView addSubview:titleLabel];
+        
+        UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectZero];
+        imageview.tag = kTagImgView;
+        imageview.clipsToBounds = YES;
+        imageview.contentMode = UIViewContentModeCenter;
+        imageview.image = [UIImage imageNamed:@"ic_connect"];
+        [_secondView addSubview:imageview];
+        
+        UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        detailLabel.tag = kTagDetailLabel;
+        detailLabel.text = NSLocalizedString(@"Zoom has jump-started our communications abilities. With it, we were able to condense multiple different platforms and technologies into one simple solution.", @"");
+        detailLabel.font = is_iPad ? kDetailPadFont : kDetailFont;
+        detailLabel.backgroundColor = [UIColor clearColor];
+        detailLabel.textColor = [UIColor whiteColor];
+        detailLabel.textAlignment =  NSTextAlignmentCenter;
+        detailLabel.numberOfLines = 0;
+        [_secondView addSubview:detailLabel];
+    }
+    
+    return _secondView;
+}
+
+- (UIView*)thirdView
+{
+    if (!_thirdView)
+    {
+        _thirdView = [[UIView alloc] initWithFrame:CGRectZero];
+        _thirdView.backgroundColor = kBGColor;
+        
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        titleLabel.tag = kTagTitleLabel;
+        titleLabel.text = NSLocalizedString(@"SHARE SCREEN DEMO", @"");
+        titleLabel.font = is_iPad ? kTitlePadFont : kTitleFont;
+        titleLabel.backgroundColor = [UIColor clearColor];
+        titleLabel.textColor = [UIColor whiteColor];
+        titleLabel.textAlignment =  NSTextAlignmentCenter;
+        titleLabel.numberOfLines = 0;
+        [_thirdView addSubview:titleLabel];
+        
+        UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectZero];
+        imageview.tag = kTagImgView;
+        imageview.clipsToBounds = YES;
+        imageview.contentMode = UIViewContentModeCenter;
+        imageview.image = [UIImage imageNamed:@"ic_device"];
+        [_thirdView addSubview:imageview];
+        
+        UILabel *detailLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        detailLabel.tag = kTagDetailLabel;
+        detailLabel.text = NSLocalizedString(@"By using Zoom, we are paying the same amount as before, but we're able to roll the product out to 5 times as many people.", @"");
+        detailLabel.font = is_iPad ? kDetailPadFont : kDetailFont;
+        detailLabel.backgroundColor = [UIColor clearColor];
+        detailLabel.textColor = [UIColor whiteColor];
+        detailLabel.textAlignment =  NSTextAlignmentCenter;
+        detailLabel.numberOfLines = 0;
+        [_thirdView addSubview:detailLabel];
+    }
+    
+    return _thirdView;
+}
+
+#pragma mark - ScrollView Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat pageWidth = CGRectGetWidth(self.view.bounds);
+    CGFloat pageFraction = self.scrollView.contentOffset.x / pageWidth;
+    self.pageControl.currentPage = roundf(pageFraction);
+    
+    self.doneButton.titleLabel.font = kButtonBoldFont;
+}
+
+- (void)onDoneButtonPressed:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(onDoneButtonPressed)])
+    {
+        [self.delegate onDoneButtonPressed];
+    }
+}
+
+@end

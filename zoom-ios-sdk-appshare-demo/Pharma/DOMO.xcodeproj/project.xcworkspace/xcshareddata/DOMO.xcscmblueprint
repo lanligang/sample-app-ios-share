@@ -1,0 +1,69 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "42e9f1dd-fa72-4c45-bcae-65ce27566feb++9838+++C110C20",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442+++F20D5CD" : {
+
+    },
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++7356+++B34557D" : {
+
+    },
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++9838+++C110C20" : {
+
+    },
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442+++684126C" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "955A58DD2E8B6AD2CE04968B007DA3A36D644B43+++C5AF638" : 0,
+    "A0D487F3D4B104D158A418C9C76907F6CDDE413C+++0A93698" : 0,
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++7356+++B34557D" : 0,
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++9838+++C110C20" : 0,
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442+++F20D5CD" : 0,
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442+++684126C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FD862600-8279-45A6-ACEE-14A91E626001",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "955A58DD2E8B6AD2CE04968B007DA3A36D644B43+++C5AF638" : "..\/..\/..",
+    "A0D487F3D4B104D158A418C9C76907F6CDDE413C+++0A93698" : "..\/..",
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++7356+++B34557D" : "Pharma\/",
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++9838+++C110C20" : "DOMO.xcodeproj\/",
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442+++F20D5CD" : "",
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442+++684126C" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : ".",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : ".",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/svn2.zoom.us\/repos\/zoom",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442+++684126C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/svn2.zoom.us\/repos\/zoom",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442+++F20D5CD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/svn2.zoom.us\/repos\/zoom",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "42e9f1dd-fa72-4c45-bcae-65ce27566feb++7356+++B34557D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/svn2.zoom.us\/repos\/zoom",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "42e9f1dd-fa72-4c45-bcae-65ce27566feb++9838+++C110C20"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:zoomvideo\/ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "955A58DD2E8B6AD2CE04968B007DA3A36D644B43+++C5AF638"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:zoomvideo\/ios-samples.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A0D487F3D4B104D158A418C9C76907F6CDDE413C+++0A93698"
+    }
+  ]
+}

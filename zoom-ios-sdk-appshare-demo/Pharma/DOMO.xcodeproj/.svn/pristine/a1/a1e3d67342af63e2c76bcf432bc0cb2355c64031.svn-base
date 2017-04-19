@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C123332118D6D43100894EED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C123332018D6D43100894EED /* Foundation.framework */; };
+		C123332318D6D43100894EED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C123332218D6D43100894EED /* CoreGraphics.framework */; };
+		C123332518D6D43100894EED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C123332418D6D43100894EED /* UIKit.framework */; };
+		C123332B18D6D43100894EED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C123332918D6D43100894EED /* InfoPlist.strings */; };
+		C123332D18D6D43100894EED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C123332C18D6D43100894EED /* main.m */; };
+		C123333118D6D43100894EED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C123333018D6D43100894EED /* AppDelegate.m */; };
+		C123333318D6D43100894EED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C123333218D6D43100894EED /* Images.xcassets */; };
+		C123335218D6D4E900894EED /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C123335018D6D4E900894EED /* MainViewController.m */; };
+		C123335318D6D4E900894EED /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C123335118D6D4E900894EED /* MainViewController.xib */; };
+		C123335618D6D87B00894EED /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C123335518D6D87B00894EED /* UIImage+Additions.m */; };
+		C123335918D6DA1900894EED /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C123335818D6DA1900894EED /* UIColor+Additions.m */; };
+		C12339FE18D7DC1800894EED /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C12339FD18D7DC1800894EED /* libsqlite3.dylib */; };
+		C15B159C1990D41C00F25C33 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C15B159B1990D41C00F25C33 /* libz.1.2.5.dylib */; };
+		C15B16181991BDF600F25C33 /* zoom_chat_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C15B16171991BDF600F25C33 /* zoom_chat_placeholder@2x.png */; };
+		C1EC318219A2FCF00021CF77 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C1EC318119A2FCF00021CF77 /* MBProgressHUD.m */; };
+		C1EE671C19A7226D0086D696 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EE671B19A7226D0086D696 /* DropboxSDK.framework */; };
+		C1EE672619A72EA80086D696 /* ZoomSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1EE672519A72EA80086D696 /* ZoomSDKResources.bundle */; };
+		D90E068E1B2192FC005D0E93 /* ZoomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90E068D1B2192FC005D0E93 /* ZoomSDK.framework */; };
+		D92AB47A1B90077D00EFD570 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92AB4791B90077D00EFD570 /* LaunchScreen.xib */; };
+		D93205E31C0EE2A100E50917 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93205E21C0EE2A100E50917 /* SplashViewController.m */; };
+		D982E2E91BE8A3EC00FFD28F /* ic_connect.png in Resources */ = {isa = PBXBuildFile; fileRef = D982E2E01BE8A3EC00FFD28F /* ic_connect.png */; };
+		D982E2EA1BE8A3EC00FFD28F /* ic_connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D982E2E11BE8A3EC00FFD28F /* ic_connect@2x.png */; };
+		D982E2EB1BE8A3EC00FFD28F /* ic_connect@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D982E2E21BE8A3EC00FFD28F /* ic_connect@3x.png */; };
+		D982E2EC1BE8A3EC00FFD28F /* ic_device.png in Resources */ = {isa = PBXBuildFile; fileRef = D982E2E31BE8A3EC00FFD28F /* ic_device.png */; };
+		D982E2ED1BE8A3EC00FFD28F /* ic_device@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D982E2E41BE8A3EC00FFD28F /* ic_device@2x.png */; };
+		D982E2EE1BE8A3EC00FFD28F /* ic_device@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D982E2E51BE8A3EC00FFD28F /* ic_device@3x.png */; };
+		D982E2EF1BE8A3EC00FFD28F /* ic_video_meeting in Resources */ = {isa = PBXBuildFile; fileRef = D982E2E61BE8A3EC00FFD28F /* ic_video_meeting */; };
+		D982E2F01BE8A3EC00FFD28F /* ic_video_meeting@2x in Resources */ = {isa = PBXBuildFile; fileRef = D982E2E71BE8A3EC00FFD28F /* ic_video_meeting@2x */; };
+		D982E2F11BE8A3EC00FFD28F /* ic_video_meeting@3x in Resources */ = {isa = PBXBuildFile; fileRef = D982E2E81BE8A3EC00FFD28F /* ic_video_meeting@3x */; };
+		D982E2F61BE8A3FD00FFD28F /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D982E2F51BE8A3FD00FFD28F /* IntroViewController.m */; };
+		D9A9B9651B69B24000BD6E30 /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A9B9641B69B24000BD6E30 /* InviteViewController.m */; };
+		D9A9B9681B69BE1000BD6E30 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9A9B96A1B69BE1000BD6E30 /* Localizable.strings */; };
+		D9D9B33E1BBA43F400A454D8 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D9B33D1BBA43F400A454D8 /* libstdc++.6.dylib */; };
+		D9E493AE1B4A5EA700C1AF15 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E493AD1B4A5EA700C1AF15 /* SettingsViewController.m */; };
+		D9E493B21B4A5EFC00C1AF15 /* icon_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E493B11B4A5EFC00C1AF15 /* icon_settings@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C18F97B4191B773B00559FED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C18F9775191B773700559FED /* ZoomSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C12332F718D6D10A00894EED;
+			remoteInfo = ZoomSDK;
+		};
+		C18F97B6191B773B00559FED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C18F9775191B773700559FED /* ZoomSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C123330818D6D22700894EED;
+			remoteInfo = ZoomSDKResources;
+		};
+		C18F97B8191B775300559FED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C18F9775191B773700559FED /* ZoomSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C12332F618D6D10A00894EED;
+			remoteInfo = ZoomSDK;
+		};
+		C18F97BA191B775300559FED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C18F9775191B773700559FED /* ZoomSDK.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C123330718D6D22700894EED;
+			remoteInfo = ZoomSDKResources;
+		};
+		D90E05B31B2150A1005D0E93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C18F9775191B773700559FED /* ZoomSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D90E04041B214AE8005D0E93;
+			remoteInfo = ZhumuSDK;
+		};
+		D90E05B51B2150A1005D0E93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C18F9775191B773700559FED /* ZoomSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D90E058F1B214B17005D0E93;
+			remoteInfo = ZhumuSDKResources;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C123331D18D6D43100894EED /* ZoomSDKAppShareSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZoomSDKAppShareSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C123332018D6D43100894EED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C123332218D6D43100894EED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C123332418D6D43100894EED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C123332818D6D43100894EED /* ZoomSDKAppShareSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZoomSDKAppShareSample-Info.plist"; sourceTree = "<group>"; };
+		C123332A18D6D43100894EED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C123332C18D6D43100894EED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C123332E18D6D43100894EED /* ZoomSDKAppShareSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZoomSDKAppShareSample-Prefix.pch"; sourceTree = "<group>"; };
+		C123332F18D6D43100894EED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C123333018D6D43100894EED /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C123333218D6D43100894EED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C123334F18D6D4E900894EED /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		C123335018D6D4E900894EED /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		C123335118D6D4E900894EED /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		C123335418D6D87B00894EED /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		C123335518D6D87B00894EED /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		C123335718D6DA1900894EED /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		C123335818D6DA1900894EED /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		C12339FD18D7DC1800894EED /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		C15B159B1990D41C00F25C33 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		C15B16171991BDF600F25C33 /* zoom_chat_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zoom_chat_placeholder@2x.png"; sourceTree = "<group>"; };
+		C18F9775191B773700559FED /* ZoomSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ZoomSDK.xcodeproj; path = ../ZoomSDK/ZoomSDK.xcodeproj; sourceTree = "<group>"; };
+		C1D8947B19AF2DF800C7D61D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		C1EC318019A2FCF00021CF77 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		C1EC318119A2FCF00021CF77 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		C1EE671B19A7226D0086D696 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = ../lib/DropboxSDK.framework; sourceTree = "<group>"; };
+		C1EE672519A72EA80086D696 /* ZoomSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ZoomSDKResources.bundle; path = ../lib/ZoomSDKResources.bundle; sourceTree = "<group>"; };
+		D90E068D1B2192FC005D0E93 /* ZoomSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZoomSDK.framework; path = ../lib/ZoomSDK.framework; sourceTree = "<group>"; };
+		D92AB4791B90077D00EFD570 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		D93205E11C0EE2A100E50917 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		D93205E21C0EE2A100E50917 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		D982E2E01BE8A3EC00FFD28F /* ic_connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_connect.png; sourceTree = "<group>"; };
+		D982E2E11BE8A3EC00FFD28F /* ic_connect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_connect@2x.png"; sourceTree = "<group>"; };
+		D982E2E21BE8A3EC00FFD28F /* ic_connect@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_connect@3x.png"; sourceTree = "<group>"; };
+		D982E2E31BE8A3EC00FFD28F /* ic_device.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_device.png; sourceTree = "<group>"; };
+		D982E2E41BE8A3EC00FFD28F /* ic_device@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_device@2x.png"; sourceTree = "<group>"; };
+		D982E2E51BE8A3EC00FFD28F /* ic_device@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_device@3x.png"; sourceTree = "<group>"; };
+		D982E2E61BE8A3EC00FFD28F /* ic_video_meeting */ = {isa = PBXFileReference; lastKnownFileType = file; path = ic_video_meeting; sourceTree = "<group>"; };
+		D982E2E71BE8A3EC00FFD28F /* ic_video_meeting@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ic_video_meeting@2x"; sourceTree = "<group>"; };
+		D982E2E81BE8A3EC00FFD28F /* ic_video_meeting@3x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ic_video_meeting@3x"; sourceTree = "<group>"; };
+		D982E2F41BE8A3FD00FFD28F /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		D982E2F51BE8A3FD00FFD28F /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		D9A9B9631B69B24000BD6E30 /* InviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteViewController.h; sourceTree = "<group>"; };
+		D9A9B9641B69B24000BD6E30 /* InviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteViewController.m; sourceTree = "<group>"; };
+		D9A9B9691B69BE1000BD6E30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D9A9B96B1B69BE1200BD6E30 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D9D9B33D1BBA43F400A454D8 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		D9E493AC1B4A5EA700C1AF15 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		D9E493AD1B4A5EA700C1AF15 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		D9E493B11B4A5EFC00C1AF15 /* icon_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_settings@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C123331A18D6D43100894EED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9D9B33E1BBA43F400A454D8 /* libstdc++.6.dylib in Frameworks */,
+				C15B159C1990D41C00F25C33 /* libz.1.2.5.dylib in Frameworks */,
+				C12339FE18D7DC1800894EED /* libsqlite3.dylib in Frameworks */,
+				C1EE671C19A7226D0086D696 /* DropboxSDK.framework in Frameworks */,
+				D90E068E1B2192FC005D0E93 /* ZoomSDK.framework in Frameworks */,
+				C123332318D6D43100894EED /* CoreGraphics.framework in Frameworks */,
+				C123332518D6D43100894EED /* UIKit.framework in Frameworks */,
+				C123332118D6D43100894EED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C123331418D6D43100894EED = {
+			isa = PBXGroup;
+			children = (
+				C18F9775191B773700559FED /* ZoomSDK.xcodeproj */,
+				C123332618D6D43100894EED /* ZoomSDKAppShareSample */,
+				C123331F18D6D43100894EED /* Frameworks */,
+				C123331E18D6D43100894EED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C123331E18D6D43100894EED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C123331D18D6D43100894EED /* ZoomSDKAppShareSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C123331F18D6D43100894EED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9D9B33D1BBA43F400A454D8 /* libstdc++.6.dylib */,
+				C123332218D6D43100894EED /* CoreGraphics.framework */,
+				C1EE671B19A7226D0086D696 /* DropboxSDK.framework */,
+				C123332018D6D43100894EED /* Foundation.framework */,
+				C12339FD18D7DC1800894EED /* libsqlite3.dylib */,
+				C15B159B1990D41C00F25C33 /* libz.1.2.5.dylib */,
+				C123332418D6D43100894EED /* UIKit.framework */,
+				D90E068D1B2192FC005D0E93 /* ZoomSDK.framework */,
+				C1EE672519A72EA80086D696 /* ZoomSDKResources.bundle */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C123332618D6D43100894EED /* ZoomSDKAppShareSample */ = {
+			isa = PBXGroup;
+			children = (
+				C123332F18D6D43100894EED /* AppDelegate.h */,
+				C123333018D6D43100894EED /* AppDelegate.m */,
+				C123333218D6D43100894EED /* Images.xcassets */,
+				D982E2F41BE8A3FD00FFD28F /* IntroViewController.h */,
+				D982E2F51BE8A3FD00FFD28F /* IntroViewController.m */,
+				D9A9B9631B69B24000BD6E30 /* InviteViewController.h */,
+				D9A9B9641B69B24000BD6E30 /* InviteViewController.m */,
+				D92AB4791B90077D00EFD570 /* LaunchScreen.xib */,
+				C123334F18D6D4E900894EED /* MainViewController.h */,
+				C123335018D6D4E900894EED /* MainViewController.m */,
+				C123335118D6D4E900894EED /* MainViewController.xib */,
+				C1EC318019A2FCF00021CF77 /* MBProgressHUD.h */,
+				C1EC318119A2FCF00021CF77 /* MBProgressHUD.m */,
+				D9E493AC1B4A5EA700C1AF15 /* SettingsViewController.h */,
+				D9E493AD1B4A5EA700C1AF15 /* SettingsViewController.m */,
+				D93205E11C0EE2A100E50917 /* SplashViewController.h */,
+				D93205E21C0EE2A100E50917 /* SplashViewController.m */,
+				C123332718D6D43100894EED /* Supporting Files */,
+				C123335718D6DA1900894EED /* UIColor+Additions.h */,
+				C123335818D6DA1900894EED /* UIColor+Additions.m */,
+				C123335418D6D87B00894EED /* UIImage+Additions.h */,
+				C123335518D6D87B00894EED /* UIImage+Additions.m */,
+			);
+			path = ZoomSDKAppShareSample;
+			sourceTree = "<group>";
+		};
+		C123332718D6D43100894EED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C15B16161991BDF600F25C33 /* images */,
+				C123332818D6D43100894EED /* ZoomSDKAppShareSample-Info.plist */,
+				C123332918D6D43100894EED /* InfoPlist.strings */,
+				C123332C18D6D43100894EED /* main.m */,
+				C123332E18D6D43100894EED /* ZoomSDKAppShareSample-Prefix.pch */,
+				D9A9B96A1B69BE1000BD6E30 /* Localizable.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C15B16161991BDF600F25C33 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D982E2E01BE8A3EC00FFD28F /* ic_connect.png */,
+				D982E2E11BE8A3EC00FFD28F /* ic_connect@2x.png */,
+				D982E2E21BE8A3EC00FFD28F /* ic_connect@3x.png */,
+				D982E2E31BE8A3EC00FFD28F /* ic_device.png */,
+				D982E2E41BE8A3EC00FFD28F /* ic_device@2x.png */,
+				D982E2E51BE8A3EC00FFD28F /* ic_device@3x.png */,
+				D982E2E61BE8A3EC00FFD28F /* ic_video_meeting */,
+				D982E2E71BE8A3EC00FFD28F /* ic_video_meeting@2x */,
+				D982E2E81BE8A3EC00FFD28F /* ic_video_meeting@3x */,
+				D9E493B11B4A5EFC00C1AF15 /* icon_settings@2x.png */,
+				C15B16171991BDF600F25C33 /* zoom_chat_placeholder@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		C18F9776191B773700559FED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C18F97B5191B773B00559FED /* ZoomSDK.framework */,
+				D90E05B41B2150A1005D0E93 /* ZhumuSDK.framework */,
+				C18F97B7191B773B00559FED /* ZoomSDKResources.bundle */,
+				D90E05B61B2150A1005D0E93 /* ZhumuSDKResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C123331C18D6D43100894EED /* ZoomSDKAppShareSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C123334918D6D43100894EED /* Build configuration list for PBXNativeTarget "ZoomSDKAppShareSample" */;
+			buildPhases = (
+				C123331918D6D43100894EED /* Sources */,
+				C123331A18D6D43100894EED /* Frameworks */,
+				C123331B18D6D43100894EED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C18F97B9191B775300559FED /* PBXTargetDependency */,
+				C18F97BB191B775300559FED /* PBXTargetDependency */,
+			);
+			name = ZoomSDKAppShareSample;
+			productName = ZoomSDKSample;
+			productReference = C123331D18D6D43100894EED /* ZoomSDKAppShareSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C123331518D6D43100894EED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Zoom Video Communications, Inc.";
+				TargetAttributes = {
+					C123331C18D6D43100894EED = {
+						DevelopmentTeam = BJ4HAAB9B3;
+					};
+				};
+			};
+			buildConfigurationList = C123331818D6D43100894EED /* Build configuration list for PBXProject "ZoomSDKAppShareSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				"zh-Hans",
+			);
+			mainGroup = C123331418D6D43100894EED;
+			productRefGroup = C123331E18D6D43100894EED /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C18F9776191B773700559FED /* Products */;
+					ProjectRef = C18F9775191B773700559FED /* ZoomSDK.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				C123331C18D6D43100894EED /* ZoomSDKAppShareSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C18F97B5191B773B00559FED /* ZoomSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZoomSDK.framework;
+			remoteRef = C18F97B4191B773B00559FED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C18F97B7191B773B00559FED /* ZoomSDKResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZoomSDKResources.bundle;
+			remoteRef = C18F97B6191B773B00559FED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D90E05B41B2150A1005D0E93 /* ZhumuSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZhumuSDK.framework;
+			remoteRef = D90E05B31B2150A1005D0E93 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D90E05B61B2150A1005D0E93 /* ZhumuSDKResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ZhumuSDKResources.bundle;
+			remoteRef = D90E05B51B2150A1005D0E93 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C123331B18D6D43100894EED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C123332B18D6D43100894EED /* InfoPlist.strings in Resources */,
+				D982E2EE1BE8A3EC00FFD28F /* ic_device@3x.png in Resources */,
+				D982E2EF1BE8A3EC00FFD28F /* ic_video_meeting in Resources */,
+				D9A9B9681B69BE1000BD6E30 /* Localizable.strings in Resources */,
+				D982E2F11BE8A3EC00FFD28F /* ic_video_meeting@3x in Resources */,
+				C15B16181991BDF600F25C33 /* zoom_chat_placeholder@2x.png in Resources */,
+				D982E2EB1BE8A3EC00FFD28F /* ic_connect@3x.png in Resources */,
+				D9E493B21B4A5EFC00C1AF15 /* icon_settings@2x.png in Resources */,
+				D982E2F01BE8A3EC00FFD28F /* ic_video_meeting@2x in Resources */,
+				D982E2ED1BE8A3EC00FFD28F /* ic_device@2x.png in Resources */,
+				D92AB47A1B90077D00EFD570 /* LaunchScreen.xib in Resources */,
+				D982E2EA1BE8A3EC00FFD28F /* ic_connect@2x.png in Resources */,
+				D982E2EC1BE8A3EC00FFD28F /* ic_device.png in Resources */,
+				C1EE672619A72EA80086D696 /* ZoomSDKResources.bundle in Resources */,
+				D982E2E91BE8A3EC00FFD28F /* ic_connect.png in Resources */,
+				C123335318D6D4E900894EED /* MainViewController.xib in Resources */,
+				C123333318D6D43100894EED /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C123331918D6D43100894EED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C123335918D6DA1900894EED /* UIColor+Additions.m in Sources */,
+				C1EC318219A2FCF00021CF77 /* MBProgressHUD.m in Sources */,
+				C123333118D6D43100894EED /* AppDelegate.m in Sources */,
+				C123335618D6D87B00894EED /* UIImage+Additions.m in Sources */,
+				D982E2F61BE8A3FD00FFD28F /* IntroViewController.m in Sources */,
+				D93205E31C0EE2A100E50917 /* SplashViewController.m in Sources */,
+				C123335218D6D4E900894EED /* MainViewController.m in Sources */,
+				C123332D18D6D43100894EED /* main.m in Sources */,
+				D9E493AE1B4A5EA700C1AF15 /* SettingsViewController.m in Sources */,
+				D9A9B9651B69B24000BD6E30 /* InviteViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C18F97B9191B775300559FED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZoomSDK;
+			targetProxy = C18F97B8191B775300559FED /* PBXContainerItemProxy */;
+		};
+		C18F97BB191B775300559FED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZoomSDKResources;
+			targetProxy = C18F97BA191B775300559FED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C123332918D6D43100894EED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C123332A18D6D43100894EED /* en */,
+				C1D8947B19AF2DF800C7D61D /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D9A9B96A1B69BE1000BD6E30 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D9A9B9691B69BE1000BD6E30 /* en */,
+				D9A9B96B1B69BE1200BD6E30 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C123334718D6D43100894EED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C123334818D6D43100894EED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C123334A18D6D43100894EED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../lib,
+					"../lib/$(PLATFORM_NAME)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZoomSDKAppShareSample/ZoomSDKAppShareSample-Prefix.pch";
+				INFOPLIST_FILE = "ZoomSDKAppShareSample/ZoomSDKAppShareSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ZoomSDKAppShareSample;
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C123334B18D6D43100894EED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../lib,
+					"../lib/$(PLATFORM_NAME)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZoomSDKAppShareSample/ZoomSDKAppShareSample-Prefix.pch";
+				INFOPLIST_FILE = "ZoomSDKAppShareSample/ZoomSDKAppShareSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ZoomSDKAppShareSample;
+				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C123331818D6D43100894EED /* Build configuration list for PBXProject "ZoomSDKAppShareSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C123334718D6D43100894EED /* Debug */,
+				C123334818D6D43100894EED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C123334918D6D43100894EED /* Build configuration list for PBXNativeTarget "ZoomSDKAppShareSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C123334A18D6D43100894EED /* Debug */,
+				C123334B18D6D43100894EED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C123331518D6D43100894EED /* Project object */;
+}

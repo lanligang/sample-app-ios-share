@@ -1,0 +1,35 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++7356" : {
+
+    },
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++7356" : 0,
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "24A2B8B0-7CAA-42C6-B0CB-9B6D651C8EB2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++7356" : "",
+    "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442" : "Pharma\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : ".",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : ".",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/svn2.zoom.us\/repos\/zoom",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "42e9f1dd-fa72-4c45-bcae-65ce27566feb++1442"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/svn2.zoom.us\/repos\/zoom",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "42e9f1dd-fa72-4c45-bcae-65ce27566feb++7356"
+    }
+  ]
+}

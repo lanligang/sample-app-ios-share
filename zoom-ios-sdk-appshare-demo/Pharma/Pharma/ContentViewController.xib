@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContentViewController">
+            <connections>
+                <outlet property="leaveButton" destination="dzc-62-GOo" id="WLX-sW-xoK"/>
+                <outlet property="pageControl" destination="KNK-pb-IpQ" id="PTz-c6-rpv"/>
+                <outlet property="scrollView" destination="RqV-I2-VwS" id="bzP-BY-Amw"/>
+                <outlet property="shareButton" destination="nKT-yw-GCU" id="DM9-xF-EON"/>
+                <outlet property="shareView" destination="8h7-lT-q6h" id="9hW-7j-Nw1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="8h7-lT-q6h">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" id="RqV-I2-VwS">
+                            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Domo1.png" id="C12-Af-zDy">
+                                    <rect key="frame" x="0.0" y="-8" width="1024" height="768"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </imageView>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Domo2.png" id="gKo-K1-stO">
+                                    <rect key="frame" x="1024" y="0.0" width="1024" height="768"/>
+                                    <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                                </imageView>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Domo3.png" id="zKb-cW-eXk">
+                                    <rect key="frame" x="2048" y="0.0" width="1024" height="768"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </imageView>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Domo4.png" id="S0p-Un-2eU">
+                                    <rect key="frame" x="3076" y="0.0" width="1024" height="768"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </imageView>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Domo5.png" id="eiP-XJ-68U">
+                                    <rect key="frame" x="4096" y="0.0" width="1024" height="768"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </imageView>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Domo6.png" id="d3H-qw-HXz">
+                                    <rect key="frame" x="5120" y="0.0" width="1024" height="768"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </imageView>
+                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" id="KNK-pb-IpQ">
+                                    <rect key="frame" x="0.0" y="723" width="1024" height="37"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                </pageControl>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dzc-62-GOo">
+                                    <rect key="frame" x="850" y="223" width="166" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <color key="backgroundColor" red="0.99117553234100342" green="0.54906201362609863" blue="0.034819476306438446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                    <state key="normal" title="Talk to Your Agent"/>
+                                    <connections>
+                                        <action selector="onLeave:" destination="-1" eventType="touchUpInside" id="nVd-7U-4kL"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nKT-yw-GCU">
+                    <rect key="frame" x="896" y="718" width="120" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.99117553234100342" green="0.54906201362609863" blue="0.034819476306438446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                    <state key="normal" title="Share"/>
+                    <connections>
+                        <action selector="onShare:" destination="-1" eventType="touchUpInside" id="m3d-wM-3F8"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="262" y="168"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Domo1.png" width="1481" height="1025"/>
+        <image name="Domo2.png" width="589" height="408"/>
+        <image name="Domo3.png" width="2732" height="2048"/>
+        <image name="Domo4.png" width="2732" height="2048"/>
+        <image name="Domo5.png" width="2732" height="2048"/>
+        <image name="Domo6.png" width="2074" height="1488"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

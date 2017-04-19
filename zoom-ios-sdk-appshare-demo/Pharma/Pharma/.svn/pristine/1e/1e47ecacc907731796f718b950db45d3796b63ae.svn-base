@@ -1,0 +1,303 @@
+//
+//  MainViewController.m
+//  ZoomSDKSample
+//
+//  Created by Robust Hu on 3/17/14.
+//  Copyright (c) 2014 Zoom Video Communications, Inc. All rights reserved.
+//
+
+#import "MainViewController.h"
+#import "SettingsViewController.h"
+#import "UIImage+Additions.h"
+#import "UIColor+Additions.h"
+#import "MBProgressHUD.h"
+#import "IntroViewController.h"
+#import "SplashViewController.h"
+
+
+#define kSDKUserID      @"Dyt9EhvdSIyZcBuf8gHQuA"
+#define kSDKUserName    @"Robust Huu"
+#define kSDKUserToken   @"1B99AxuqSEkXnha6mp8laIngK5LLu1ZqI4xBUtmNDWM.BgIgTTUrNVh2OGhqMUIxNDFJdGU3OXlGc3hYTzVrb29xb2pANmNhNmU2ZDY0YTA4ZDk3MjA5NjMzYjgyNDk0MTExOTA5NDQ0MjMzY2RkZDg1NmIwNTE2NDNmZGI3MjVlODNiMAA"
+#define kSDKMeetNumber  @"5565565556"
+//#define kSDKUserID      @"t5KitEmlSDCZUcTt-UeJjw"
+//#define kSDKUserName    @"wei guo"
+//#define kSDKUserToken   @"Ru9MZiPlxgZFOr3wtlUGRUtOjrIcbpeqGWL8qxt1B9I.BgIgN0t1SXpsWlVZWnJDK0t5UFFnRmlwbzM4TE5WVHlYZ2lAYzRmYWI3YTg4OTUzZmFkZWY2NjFmNmJkMDVjNGNiM2U5NjkwNDgwNzczNTA2MWJiNWUzYWNjNTBiMmUyOTIwYgA"
+//#define kSDKMeetNumber  @"6086086008"
+
+
+@interface MainViewController ()<UIAlertViewDelegate, IntroVCDelegate>
+
+@property (retain, nonatomic) IntroViewController *introVC;
+@property (retain, nonatomic) SplashViewController *splashVC;
+@property (retain, nonatomic) UIButton *shareBtn;
+
+@end
+
+@implementation MainViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shareViewChanged:) name:kNoti_AppShare_ShareView_Changed object:nil];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    self.splashVC = nil;
+    self.introVC = nil;
+//    [_logoImageView release];
+//    [_statusLabel release];
+//    [_meetNowButton release];
+//    [_joinMeetButton release];
+//    
+//    [super dealloc];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    self.title = @"ZoomSDK Sample";
+     
+    _statusLabel.text = NSLocalizedString(@"Screen Sharing Demo", @"");
+    CGFloat fontSize = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 32 : 18;
+    _statusLabel.font = [UIFont fontWithName:@"Helvetica" size:fontSize];
+    
+    _logoImageView.image = [UIImage imageNamed:@"zoom_chat_placeholder"];
+    
+    [_settingsButton setImage:[UIImage imageNamed:@"icon_settings"] forState:UIControlStateNormal];
+    
+    UIColor *bgColor = [UIColor colorWithHex:0xF39C12];
+    [self.meetNowButton setBackgroundImage:[UIImage imageWithColor:bgColor] forState:UIControlStateNormal];
+    [self.joinMeetButton setBackgroundImage:[UIImage imageWithColor:bgColor] forState:UIControlStateNormal];
+    
+    [self showSplashView];
+    [self showIntroView];
+    
+    [self.view addSubview:self.shareBtn];
+    self.shareBtn.hidden = YES;
+    
+#if 0
+    //For Customize Meeting Invitation
+    [ZoomSDKInviteHelper sharedInstance].customizeInvite = YES;
+    [ZoomSDKInviteHelper sharedInstance].inviteVCName = @"InviteViewController";
+#endif
+    
+    //For Enable/Disable Copy URL
+//    [ZoomSDKInviteHelper sharedInstance].disableCopyURL = YES;
+    
+    //For Enable/Disable Invite by Email
+    [ZoomSDKInviteHelper sharedInstance].disableInviteEmail = YES;
+}
+
+- (UIButton*)shareBtn
+{
+    if (!_shareBtn)
+    {
+        _shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _shareBtn.frame = CGRectMake(20, 40, 80, 40);
+        [_shareBtn setTitle:@"Share" forState:UIControlStateNormal];
+        [_shareBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_shareBtn setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.5]];
+        [_shareBtn addTarget:self action:@selector(onShareBtn:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _shareBtn;
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    //for bug that there exist 20 pixels in the bottom while leaving meeting quickly
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+}
+
+- (IBAction)onMeetNow:(id)sender
+{
+    ZoomSDKMeetingService *ms = [[ZoomSDK sharedSDK] getMeetingService];
+    if (ms)
+    {
+        ms.delegate = self;
+        
+        //for scheduled meeting
+        ZoomSDKMeetError ret = [ms startMeeting:kSDKUserID userToken:kSDKUserToken userType:ZoomSDKUserType_ZoomUser displayName:kSDKUserName meetingNumber:kSDKMeetNumber];
+        
+        //for instant meeting
+//        ZoomSDKMeetError ret = [ms startInstantMeeting:kSDKUserID userToken:kSDKUserToken userType:ZoomSDKUserType_ZoomUser displayName:kSDKUserName];
+        
+        NSLog(@"onMeetNow ret:%d", ret);
+    }
+}
+
+- (IBAction)onJoinaMeeting:(id)sender
+{
+    ZoomSDKMeetingService *ms = [[ZoomSDK sharedSDK] getMeetingService];
+    if (ms)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Please input the meeting number" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        
+        alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+        [alert textFieldAtIndex:0].placeholder = @"#########";
+        [alert textFieldAtIndex:0].keyboardType = UIKeyboardTypeNumberPad;
+        
+        [alert show];
+//        [alert release];
+    }
+}
+
+- (IBAction)onSettings:(id)sender
+{
+    ZoomSDKMeetingSettings *settings = [[ZoomSDK sharedSDK] getMeetingSettings];
+    if (!settings)
+        return;
+
+    SettingsViewController *vc = [[SettingsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    nav.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    [self presentViewController:nav animated:YES completion:NULL];
+    
+//    [nav release];
+//    [vc release];
+}
+
+- (void)onShareBtn:(id)sender
+{
+    UIButton *btn = (UIButton*)sender;
+    NSString *title = btn.titleLabel.text;
+    ZoomSDKMeetingService *ms = [[ZoomSDK sharedSDK] getMeetingService];
+    if ([title isEqualToString:@"Share"])
+    {
+        [btn setTitle:@"Pause" forState:UIControlStateNormal];
+        
+        [ms appShareWithView:self.introVC.view];
+    }
+    else
+    {
+        [btn setTitle:@"Share" forState:UIControlStateNormal];
+        [ms appShareWithView:self.splashVC.view];
+    }
+}
+
+#pragma mark - Meeting Service Delegate
+
+- (void)onMeetingReturn:(ZoomSDKMeetError)error internalError:(NSInteger)internalError
+{
+    NSLog(@"onMeetingReturn:%d, internalError:%zd", error, internalError);
+}
+
+- (void)onMeetingStateChange:(ZoomSDKMeetingState)state
+{
+    NSLog(@"onMeetingStateChange:%d", state);
+    
+    BOOL inMeeting = (state == ZoomSDKMeetingState_InMeeting);
+    self.shareBtn.hidden = !inMeeting;
+    
+#if 1
+    if (state == ZoomSDKMeetingState_InMeeting)
+    {
+        //For customizing the content of Invite by SMS
+        NSString *meetingID = [[ZoomSDKInviteHelper sharedInstance] meetingID];
+        NSString *smsMessage = [NSString stringWithFormat:NSLocalizedString(@"Please join meeting with ID: %@", @""), meetingID];
+        [[ZoomSDKInviteHelper sharedInstance] setInviteSMS:smsMessage];
+        
+        //For customizing the content of Copy URL
+        NSString *joinURL = [[ZoomSDKInviteHelper sharedInstance] joinMeetingURL];
+        NSString *copyURLMsg = [NSString stringWithFormat:NSLocalizedString(@"Meeting URL: %@", @""), joinURL];
+        [[ZoomSDKInviteHelper sharedInstance] setInviteCopyURL:copyURLMsg];
+        
+        //For customizing "Invite by Email"
+        [ZoomSDKInviteHelper sharedInstance].inviteEmailSubject = @"Invite by Email";
+        [ZoomSDKInviteHelper sharedInstance].inviteEmailContent = [NSString stringWithFormat:NSLocalizedString(@"Please join meeting with ID: %@", @""), meetingID];
+    }
+#endif
+    
+#if 0
+    //For adding customize view above the meeting view
+    if (state == ZoomSDKMeetingState_InMeeting)
+    {
+        ZoomSDKMeetingService *ms = [[ZoomSDK sharedSDK] getMeetingService];
+        UIView *v = [ms meetingView];
+        
+        UIView *sv = [[UIView alloc] initWithFrame:CGRectMake(30, 100, 50, 50)];
+        sv.backgroundColor = [UIColor redColor];
+        [v addSubview:sv];
+        [sv release];
+    }
+    
+#endif
+}
+
+#pragma mark - AlertView Delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != alertView.cancelButtonIndex)
+    {
+        NSString *text = [alertView textFieldAtIndex:0].text;
+        ZoomSDKMeetingService *ms = [[ZoomSDK sharedSDK] getMeetingService];
+        if ([text length] > 0 && ms)
+        {
+            ms.delegate = self;
+            NSString *pwd = [alertView textFieldAtIndex:1].text;
+            ZoomSDKMeetError ret = [ms joinMeeting:text displayName:kSDKUserName password:pwd];
+            NSLog(@"onJoinaMeeting ret:%d", ret);
+        }
+    }
+}
+
+#pragma mark - IntroView
+
+- (void)showSplashView
+{
+    SplashViewController *vc = [SplashViewController new];
+    self.splashVC = vc;
+    
+    [self.view insertSubview:self.splashVC.view atIndex:0];
+    self.splashVC.view.frame = self.view.bounds;
+}
+
+- (void)showIntroView
+{
+    IntroViewController *vc = [IntroViewController new];
+    self.introVC = vc;
+    self.introVC.delegate = self;
+//    [vc release];
+    
+    [self.view addSubview:self.introVC.view];
+    self.introVC.view.frame = self.view.bounds;
+}
+
+-(void)onDoneButtonPressed
+{
+    [self onMeetNow:nil];
+}
+
+#pragma mark - Notification
+
+- (void)shareViewChanged:(NSNotification *)aNotification
+{
+    ZoomSDKMeetingService *ms = [[ZoomSDK sharedSDK] getMeetingService];
+    if (ms)
+    {
+        [ms appShareWithView:self.splashVC.view];
+        
+        [self.shareBtn setTitle:@"Share" forState:UIControlStateNormal];
+    }
+}
+
+@end
