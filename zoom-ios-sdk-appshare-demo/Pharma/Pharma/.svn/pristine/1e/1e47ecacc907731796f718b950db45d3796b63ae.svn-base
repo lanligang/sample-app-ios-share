@@ -15,14 +15,14 @@
 #import "SplashViewController.h"
 
 
-#define kSDKUserID      @"Dyt9EhvdSIyZcBuf8gHQuA"
-#define kSDKUserName    @"Robust Huu"
-#define kSDKUserToken   @"1B99AxuqSEkXnha6mp8laIngK5LLu1ZqI4xBUtmNDWM.BgIgTTUrNVh2OGhqMUIxNDFJdGU3OXlGc3hYTzVrb29xb2pANmNhNmU2ZDY0YTA4ZDk3MjA5NjMzYjgyNDk0MTExOTA5NDQ0MjMzY2RkZDg1NmIwNTE2NDNmZGI3MjVlODNiMAA"
-#define kSDKMeetNumber  @"5565565556"
-//#define kSDKUserID      @"t5KitEmlSDCZUcTt-UeJjw"
-//#define kSDKUserName    @"wei guo"
-//#define kSDKUserToken   @"Ru9MZiPlxgZFOr3wtlUGRUtOjrIcbpeqGWL8qxt1B9I.BgIgN0t1SXpsWlVZWnJDK0t5UFFnRmlwbzM4TE5WVHlYZ2lAYzRmYWI3YTg4OTUzZmFkZWY2NjFmNmJkMDVjNGNiM2U5NjkwNDgwNzczNTA2MWJiNWUzYWNjNTBiMmUyOTIwYgA"
-//#define kSDKMeetNumber  @"6086086008"
+#define kSDKUserID      @""
+#define kSDKUserName    @""
+#define kSDKUserToken   @""
+#define kSDKMeetNumber  @""
+//#define kSDKUserID      @""
+//#define kSDKUserName    @""
+//#define kSDKUserToken   @""
+//#define kSDKMeetNumber  @""
 
 
 @interface MainViewController ()<UIAlertViewDelegate, IntroVCDelegate>
