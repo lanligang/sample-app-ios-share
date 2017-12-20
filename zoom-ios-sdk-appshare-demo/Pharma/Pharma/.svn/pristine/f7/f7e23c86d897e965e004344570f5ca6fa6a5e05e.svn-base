@@ -9,12 +9,12 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 
-#define kZoomSDKAppKey      @"tqBVM1G4IHElOSZAFsGDlo854IcnjQ5LWhGl"
-#define kZoomSDKAppSecret   @"dyR0453zTzzlHZfT8DW635Tnvwnz94MgDNHc"
-#define kZoomSDKDomain      @"dev.zoom.us"
-//#define kZoomSDKAppKey      @"ilGsp1PB02C0iNJ1HqSFS1aKip9q2GGFSVeF"
-//#define kZoomSDKAppSecret   @"0e84OdUCaOF6sXVIRuKsufstX7fCmreCUI9y"
-//#define kZoomSDKDomain      @"zoom.us"
+#define kZoomSDKAppKey      @""
+#define kZoomSDKAppSecret   @""
+#define kZoomSDKDomain      @""
+//#define kZoomSDKAppKey      @""
+//#define kZoomSDKAppSecret   @""
+//#define kZoomSDKDomain      @""
 
 @implementation AppDelegate
 
